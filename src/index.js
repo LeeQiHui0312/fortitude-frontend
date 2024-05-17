@@ -1,14 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import { Route, Routes, Link, BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
-import App from './App';
+import JumbleEngine from './features/JumbleEngine/JumbleEngine.tsx';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+const App = () => {
+  return (
+    <Routes>
+      <Route exact path="/" element={<JumbleEngine />} />
+    </Routes>
+  );
+};
+
+ReactDOM.render(
+  <Router>
     <App />
-  </React.StrictMode>
+  </Router>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
